@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 def init_db():
-    conn = sqlite3.connect('ilgi_data.db')  #
+    conn = sqlite3.connect('ilgi_data.db')  
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS records (
@@ -19,12 +19,12 @@ def init_db():
     conn.commit()
     conn.close()
 
-init_db()  # 서버 시작 시 테이블 생성
+init_db()  
 
 # SQLite 데이터베이스 연결
 def get_db_connection():
-    conn = sqlite3.connect('dak_products_20250223_5.db')  # SQLite DB 파일 위치
-    conn.row_factory = sqlite3.Row  # 결과를 딕셔너리 형태로 반환하도록 설정
+    conn = sqlite3.connect('dak_products_20250223_5.db')  
+    conn.row_factory = sqlite3.Row  
     return conn
 
 @app.route('/')
@@ -79,7 +79,7 @@ def save_record():
     # 폼에서 데이터 가져오기
     date = request.form['date']
     mood = request.form['mood']
-    workout_parts = ', '.join(request.form.getlist('workout_parts'))  # 여러 값 가져오기
+    workout_parts = ', '.join(request.form.getlist('workout_parts'))
     feedback = request.form['feedback']
     
     # 데이터베이스에 저장
@@ -99,8 +99,6 @@ def view_records():
     c.execute("SELECT * FROM records")
     records = c.fetchall()
     conn.close()
-    
-    # HTML로 출력
     return render_template('view.html', records=records)
 
 if __name__ == '__main__':
