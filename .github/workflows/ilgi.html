@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 기록</title>
+    <style>
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center"><b>오늘의 기록을 작성하세요</b></h1>
+        <form action="/save" method="POST">
+            <table border="1px solid black" width="400">
+                <tr align="left" bgcolor="whitesmoke" height="50">
+                    <th>날짜:</th>
+                    <td><input type="date" name="date" required></td>
+                </tr>               
+                <tr bgcolor="whitesmoke" height="35">
+                    <th align="center">오늘의 기분: </th>
+                        <td>
+                            <select name="mood">
+                            <option value="매우 좋음">매우 좋음</option>
+                            <option value="좋음">좋음</option>
+                            <option value="보통">보통</option>
+                            <option value="별로">별로</option>
+                            <option value="매우 별로">매우 별로</option>
+                            </select>
+                        </td> 
+
+                </tr>
+                <tr bgcolor="whitesmoke" height="50">
+                    <td style="text-align: center;"><b>오늘의 부위:</b></td>
+                    <td colspan="2" style="text-align: center;">
+                        <label><input type="checkbox" name="workout_parts" value="등"> 등</label>
+                        <label><input type="checkbox" name="workout_parts" value="가슴"> 가슴</label>
+                        <label><input type="checkbox" name="workout_parts" value="어깨"> 어깨</label>
+                        <label><input type="checkbox" name="workout_parts" value="하체"> 하체</label>
+                        <label><input type="checkbox" name="workout_parts" value="이두"> 이두</label>
+                        <label><input type="checkbox" name="workout_parts" value="삼두"> 삼두</label>
+                        <label><input type="checkbox" name="workout_parts" value="복근"> 복근</label>
+                        <label><input type="checkbox" name="workout_parts" value="유산소"> 유산소</label>
+                    </td>
+                </tr>
+                
+                <tr bgcolor="whitesmoke" height="50">
+                    <td colspan="2" style="text-align: left;">
+                        <b>오늘의 피드백:</b><br>
+                        <textarea name="feedback" rows="30" style="width: 100%"></textarea>
+                    </td>  
+                </tr>
+                
+                <tr align="center" bgcolor="whitesmoke" height="35">
+                    <td colspan="2">
+                        <input type="submit" value="저장">
+                        <a href="/view">
+                            <input type="button" value="일기장 보기">
+                        </a>
+                    </td>   
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+    
