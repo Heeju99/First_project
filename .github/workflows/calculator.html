@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #FFB372;
+        }
+        th, td {
+            text-align: center; 
+            padding: 12px 15px;
+        }
+        #input1, #input2 {
+            width: 300px;
+            height: 50px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 3px solid #FF6F61;
+        }
+
+        /* 새로운 프레임 스타일 */
+        .frame {
+            border: 2px solid #FF6F61;  /* 테두리 색상 */
+            border-radius: 8px;  /* 모서리 둥글게 */
+            padding: 20px;  /* 내용과 테두리 사이의 여백 */
+            margin: 30px auto;  /* 상하 간격 */
+            width: 85%;  /* 프레임의 너비 */
+            background-color: #f9f9f9;  /* 배경 색상 */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);  /* 부드러운 그림자 */
+            overflow-x: auto;  /* 긴 테이블이 있을 때 가로 스크롤 생기도록 */
+        }
+
+        /* 프레임 내부 텍스트 */
+        .frame h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* 표 스타일 */
+        .frame table {
+            border: 1px solid #ddd;
+        }
+        .frame th {
+            background: #FF6F61;
+            color: white;
+            font-weight: bold;
+        }
+        .frame td {
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1 align=center><b>가격 선호도(1~10)와 단백질(10~100)를 입력하세요</b></h1>
+    <h2 align=center>최적화 값이 작을수록 고객님의 요구에 맞습니다</h2>
+    <form action="/cal" method="get" align=center>
+        <input id="input1" type="number" name="num1" placeholder="입력해주세요"> &nbsp <b>X</b> &nbsp <b>가격 &nbsp - &nbsp</b>
+        <input id="input2" type="number" name="num2" placeholder="입력해주세요"> &nbsp <b>X</b> &nbsp <b>단백질질 &nbsp = &nbsp</b>
+        <input type="submit" value="계산">
+    </form>
+ 
+    <!-- 계산 결과를 담는 프레임 -->
+    <div class="frame">
+        <table>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {% if product['이미지_URL'] %}
+                        <img src="{{ product['이미지_URL'] }}" width="100">
+                    {% else %}
+                        이미지 없음
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <!-- 추가적인 결과 출력 -->
+        <div>
+            {{ result | safe }}
+        </div>
+    </div>
+
+</body>
+</html>
