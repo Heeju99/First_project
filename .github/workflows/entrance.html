@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            margin: 0;
+            height: 95vh; 
+            background-image: url('/static/img/img1.jpg'), url('/static/img/img4.jpg'), url('/static/img/img3.jpg'), url('/static/img/img4.jpg');
+            background-size: 650px 650px, 650px 650px, 650px 650px; 
+            background-position: bottom left, bottom left 650px, bottom left 1300px, bottom left 1950px; /* 이미지 위치를 가로로 배치 */
+            background-repeat: no-repeat, no-repeat, no-repeat;  
+        } 
+        .InputContainer {
+            width: 210px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, rgb(227, 213, 255), rgb(255, 231, 231));
+            border-radius: 30px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+        }
+
+        .input {
+            width: 200px;
+            height: 40px;
+            border: none;
+            outline: none;
+            caret-color: rgb(255, 81, 0);
+            background-color: rgb(255, 255, 255);
+            border-radius: 30px;
+            padding-left: 15px;
+            letter-spacing: 0.8px;
+            color: rgb(19, 19, 19);
+            font-size: 13.4px;
+        }
+        .title {
+            font-size: 40px;  /* 글씨 크기 */
+            text-align: center;  /* 가운데 정렬 */
+            margin-top: 80px;  /* 위쪽 여백 추가 (더 내리고 싶으면 숫자 증가) */
+        }
+        .hi {
+            font-size: 30px;
+            text-align: center;
+        }
+        .a {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* a 태그 버튼 가운데 정렬 */
+        a {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #FF5C4D;
+        }
+        /* 이미지 스타일 */
+        .image-container {
+            text-align: center;  /* 이미지를 중앙 정렬 */
+            margin-top: 20px;  /* 버튼과 이미지 간 간격 */
+        }
+
+        .image-container img {
+            width: 300px;  /* 이미지 너비 설정 */
+            height: auto;   /* 비율에 맞게 높이 자동 설정 */
+            border-radius: 10px; /* 이미지 모서리 둥글게 */
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="title">안녕임〰️〰️</h1>
+    <p class="hi">버튼을 눌러 어서 가성비 닭가슴살을 찾아보자</p>
+
+
+    <a href="/cal">
+        <button>최적의 제품 찾기</button>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=iw3eEjp6wYU">
+        <button>동기부여를 원한다면?</button>
+    </a>
+
+    <a href="/ilgi">
+        <button>나만의 헬스 일기장</button>
+    </a>
+
+    <a href="/view">
+        <button>일기 읽기</button>
+    </a>
+
+</body>
+</html>
